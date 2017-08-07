@@ -16,8 +16,8 @@ h1 {
 
 .content {
   max-width: 1100px;
-  min-width: 320px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  box-sizing: border-box; }
 
 .btn {
   width: 80px;
@@ -46,10 +46,93 @@ h1 {
     background-color: #ffdec3;
     transition: .3s; }
 
+.lightBox {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 101; }
+
+.lightBox_content {
+  width: 750px;
+  height: 300px;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box; }
+  .lightBox_content .btn_buyNow {
+    width: 110px;
+    height: 37px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 37px;
+    padding: 0 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px; }
+
+.lightBox_btn_close {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 1px solid #121212;
+  background-image: url("../img/cancel.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer; }
+  .lightBox_btn_close:hover {
+    opacity: .7;
+    transition: .3s; }
+
+.lightBox_img {
+  width: 280px;
+  height: 100%;
+  text-align: center;
+  float: left; }
+  .lightBox_img img {
+    height: 100%; }
+
+.lightBox_text {
+  width: calc(100% - 280px);
+  float: left; }
+
+.lightBox_productName {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  display: inline-block; }
+
+.lightBox_priceLabel {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #efefef;
+  vertical-align: text-bottom;
+  background-color: #121212;
+  padding: 7px;
+  display: inline-block;
+  margin-left: 10px; }
+
+.lightBox_productDescription {
+  font-size: 17px;
+  line-height: 24px; }
+
 header {
   width: 100%;
   height: 50px;
   background: #121212;
+  padding: 0 10px;
+  box-sizing: border-box;
   position: fixed;
   z-index: 100; }
   header .content {
@@ -110,12 +193,16 @@ header {
     -ms-flex-pack: center;
     justify-content: center; }
   .projectInfo h1 {
+    text-align: center;
     margin-bottom: 15px;
     letter-spacing: 1px; }
   .projectInfo p {
     font-size: 15px;
     margin-top: 25px;
     margin-bottom: 10px; }
+
+.projectInfo_progressText_mobile {
+  display: none; }
 
 .progressBar_bg {
   width: 300px;
@@ -146,7 +233,9 @@ header {
 
 .prodectReward {
   position: relative;
-  top: -125px; }
+  top: -125px;
+  margin-bottom: -95px;
+  box-sizing: border-box; }
 
 .prodectReward_title {
   font-size: 18px;
@@ -178,9 +267,9 @@ header {
 .prodectReward_list_box {
   width: 250px;
   border-radius: 7px;
-  box-shadow: 0 1px 10px #d5d5d5;
+  box-shadow: 0 1px 10px rgba(192, 192, 192, 0.75);
   background-color: #fff;
-  padding: 10px;
+  padding: 13px 15px 13px;
   box-sizing: border-box;
   position: relative;
   margin: 0 5px 35px; }
@@ -193,7 +282,7 @@ header {
   letter-spacing: 1px;
   color: #efefef;
   background-color: #121212;
-  padding: 5px 7px;
+  padding: 7px;
   position: absolute;
   left: 0; }
 
@@ -202,7 +291,7 @@ header {
 
 .prodectReward_list_box_section2 {
   letter-spacing: 1px;
-  margin: 15px 7px; }
+  margin-top: 15px; }
 
 .prodectReward_prodectName {
   font-size: 15px;
@@ -215,7 +304,8 @@ header {
   line-height: 21px;
   color: #999; }
 
-.prodectReward_list_box_section3 {
+.prodectReward_btn {
+  margin-top: 15px;
   text-align: right; }
 
 .btn_buyNow {
@@ -224,3 +314,58 @@ header {
 footer {
   height: 50px;
   background-color: #121212; }
+
+@media screen and (max-width: 1200px) {
+  .prodectReward {
+    padding: 0 10px; }
+  .prodectReward_list {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; } }
+
+@media screen and (max-width: 767px) {
+  .logo_text {
+    display: none; }
+  .projectInfo .content {
+    padding: 0 40px; }
+  .projectInfo h1 {
+    font-size: 24px; }
+  .projectInfo_progressText_PC {
+    display: none; }
+  .projectInfo_progressText_mobile {
+    display: block; }
+  .progressBar_bg {
+    width: 100%; }
+    .progressBar_bg .progressBar {
+      width: 65%; }
+  .projectInfo_more {
+    display: none; }
+  .prodectReward {
+    padding: 0 15px;
+    margin-bottom: -45px;
+    top: -65px; }
+  .prodectReward_title {
+    display: none; }
+  .prodectReward_list_box {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 3px 10px rgba(192, 192, 192, 0.5);
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px; }
+  .prodectReward_list_box_section1 {
+    width: 25%;
+    display: inline-block;
+    float: left; }
+    .prodectReward_list_box_section1 .prodectReward_priceLabel {
+      bottom: 13px; }
+    .prodectReward_list_box_section1 .prodectReward_prodectImg {
+      height: 105px; }
+  .prodectReward_list_box_section2 {
+    width: 70%;
+    height: 70%;
+    margin: 0;
+    display: inline-block;
+    float: right; }
+    .prodectReward_list_box_section2 .prodectReward_prodectDescription {
+      line-height: 18px; } }
