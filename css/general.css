@@ -51,7 +51,8 @@ h1 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
-  z-index: 101; }
+  z-index: 101;
+  display: none; }
 
 .lightBox_content {
   width: 750px;
@@ -211,7 +212,7 @@ header {
   position: relative; }
 
 .progressBar {
-  width: 65%;
+  width: 0;
   height: 100%;
   background: linear-gradient(to right, #f8e0c6 0%, #eebc94 100%);
   position: absolute;
@@ -231,19 +232,19 @@ header {
     color: #bbb;
     transition: .3s; }
 
-.prodectReward {
+.productReward {
   position: relative;
   top: -125px;
   margin-bottom: -95px;
   box-sizing: border-box; }
 
-.prodectReward_title {
+.productReward_title {
   font-size: 18px;
   letter-spacing: 1px;
   color: #efefef;
   margin-left: 10px;
   margin-bottom: 20px; }
-  .prodectReward_title .prodectReward_amount {
+  .productReward_title .productReward_amount {
     font-size: 15px;
     font-weight: 800;
     color: #333;
@@ -253,7 +254,7 @@ header {
     margin-left: 10px;
     display: inline-block; }
 
-.prodectReward_list {
+.productReward_list {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -264,7 +265,7 @@ header {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
-.prodectReward_list_box {
+.productReward_list_box {
   width: 250px;
   border-radius: 7px;
   box-shadow: 0 1px 10px rgba(192, 192, 192, 0.75);
@@ -274,10 +275,10 @@ header {
   position: relative;
   margin: 0 5px 35px; }
 
-.prodectReward_list_box_section1 {
+.productReward_list_box_section1 {
   text-align: center; }
 
-.prodectReward_priceLabel {
+.productReward_priceLabel {
   font-size: 12px;
   letter-spacing: 1px;
   color: #efefef;
@@ -286,25 +287,25 @@ header {
   position: absolute;
   left: 0; }
 
-.prodectReward_prodectImg {
+.productReward_productImg {
   height: 150px; }
 
-.prodectReward_list_box_section2 {
+.productReward_list_box_section2 {
   letter-spacing: 1px;
   margin-top: 15px; }
 
-.prodectReward_prodectName {
+.productReward_productName {
   font-size: 15px;
   color: #333;
   font-weight: 800;
   margin-bottom: 15px; }
 
-.prodectReward_prodectDescription {
+.productReward_productDescription {
   font-size: 12px;
   line-height: 21px;
   color: #999; }
 
-.prodectReward_btn {
+.productReward_btn {
   margin-top: 15px;
   text-align: right; }
 
@@ -316,9 +317,9 @@ footer {
   background-color: #121212; }
 
 @media screen and (max-width: 1200px) {
-  .prodectReward {
+  .productReward {
     padding: 0 10px; }
-  .prodectReward_list {
+  .productReward_list {
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
     justify-content: space-around; } }
@@ -355,32 +356,32 @@ footer {
       width: 65%; }
   .projectInfo_more {
     display: none; }
-  .prodectReward {
+  .productReward {
     padding: 0 15px;
     margin-bottom: -45px;
     top: -65px; }
-  .prodectReward_title {
+  .productReward_title {
     display: none; }
-  .prodectReward_list_box {
+  .productReward_list_box {
     width: 100%;
     border-radius: 0;
     box-shadow: 0 3px 10px rgba(192, 192, 192, 0.5);
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 20px; }
-  .prodectReward_list_box_section1 {
+  .productReward_list_box_section1 {
     width: 25%;
     display: inline-block;
     float: left; }
-    .prodectReward_list_box_section1 .prodectReward_priceLabel {
+    .productReward_list_box_section1 .productReward_priceLabel {
       bottom: 13px; }
-    .prodectReward_list_box_section1 .prodectReward_prodectImg {
+    .productReward_list_box_section1 .productReward_productImg {
       height: 105px; }
-  .prodectReward_list_box_section2 {
+  .productReward_list_box_section2 {
     width: 70%;
     height: 70%;
     margin: 0;
     display: inline-block;
     float: right; }
-    .prodectReward_list_box_section2 .prodectReward_prodectDescription {
+    .productReward_list_box_section2 .productReward_productDescription {
       line-height: 18px; } }
