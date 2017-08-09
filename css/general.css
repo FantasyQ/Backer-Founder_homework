@@ -17,6 +17,7 @@ h1 {
 .content {
   max-width: 1100px;
   margin: 0 auto;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .btn {
@@ -26,16 +27,20 @@ h1 {
   font-size: 12px;
   line-height: 25px;
   border-radius: 25px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   cursor: pointer; }
 
 .btn_more {
   color: #bbb;
-  border: 1px solid #bbb; }
+  border: 1px solid #bbb;
+  vertical-align: bottom; }
   .btn_more:hover {
     color: #d6d6d6;
     border: 1px solid #d6d6d6;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s; }
 
 .btn_buyNow {
@@ -44,6 +49,8 @@ h1 {
   .btn_buyNow:hover {
     color: #888;
     background-color: #ffdec3;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s; }
 
 .lightBox {
@@ -59,6 +66,7 @@ h1 {
   height: 300px;
   color: #333;
   background-color: #fff;
+  -webkit-box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.4);
   padding: 20px;
   margin: auto;
@@ -67,6 +75,7 @@ h1 {
   right: 0;
   top: 0;
   bottom: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
   .lightBox_content .btn_buyNow {
     width: 110px;
@@ -94,6 +103,8 @@ h1 {
   cursor: pointer; }
   .lightBox_btn_close:hover {
     opacity: .7;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s; }
 
 .lightBox_img {
@@ -133,17 +144,21 @@ header {
   height: 50px;
   background: #121212;
   padding: 0 10px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: fixed;
   z-index: 100; }
   header .content {
     height: 100%;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; }
@@ -181,15 +196,20 @@ header {
   color: #efefef; }
   .projectInfo .content {
     height: 100%;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center; }
@@ -214,6 +234,9 @@ header {
 .progressBar {
   width: 0;
   height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#f8e0c6), to(#eebc94));
+  background: -webkit-linear-gradient(left, #f8e0c6 0%, #eebc94 100%);
+  background: -o-linear-gradient(left, #f8e0c6 0%, #eebc94 100%);
   background: linear-gradient(to right, #f8e0c6 0%, #eebc94 100%);
   position: absolute;
   left: 0;
@@ -230,12 +253,15 @@ header {
     top: -3px; }
   .projectInfo_more:hover {
     color: #bbb;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s; }
 
 .productReward {
   position: relative;
   top: -125px;
   margin-bottom: -95px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .productReward_title {
@@ -255,12 +281,14 @@ header {
     display: inline-block; }
 
 .productReward_list {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between; }
@@ -268,15 +296,17 @@ header {
 .productReward_list_box {
   width: 250px;
   border-radius: 7px;
+  -webkit-box-shadow: 0 1px 10px rgba(192, 192, 192, 0.75);
   box-shadow: 0 1px 10px rgba(192, 192, 192, 0.75);
   background-color: #fff;
   padding: 13px 15px 13px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
   margin: 0 5px 35px; }
 
 .productReward_list_box_section1 {
-  text-align: center; }
+  overflow: hidden; }
 
 .productReward_priceLabel {
   font-size: 12px;
@@ -287,27 +317,58 @@ header {
   position: absolute;
   left: 0; }
 
+.productReward_productImgBox {
+  width: 100%;
+  height: 150px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
 .productReward_productImg {
-  height: 150px; }
+  max-width: 100%; }
 
 .productReward_list_box_section2 {
   letter-spacing: 1px;
-  margin-top: 15px; }
+  margin-top: 15px;
+  margin-bottom: 40px; }
 
 .productReward_productName {
+  height: 15px;
   font-size: 15px;
   color: #333;
   font-weight: 800;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis; }
 
 .productReward_productDescription {
-  font-size: 12px;
+  height: 65px;
+  font-size: 13px;
   line-height: 21px;
-  color: #999; }
+  color: #999;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis; }
 
 .productReward_btn {
   margin-top: 15px;
-  text-align: right; }
+  position: absolute;
+  right: 15px;
+  bottom: 15px; }
 
 .btn_buyNow {
   margin-left: 5px; }
@@ -365,6 +426,7 @@ footer {
   .productReward_list_box {
     width: 100%;
     border-radius: 0;
+    -webkit-box-shadow: 0 3px 10px rgba(192, 192, 192, 0.5);
     box-shadow: 0 3px 10px rgba(192, 192, 192, 0.5);
     margin-left: 0;
     margin-right: 0;
@@ -375,13 +437,27 @@ footer {
     float: left; }
     .productReward_list_box_section1 .productReward_priceLabel {
       bottom: 13px; }
+    .productReward_list_box_section1 .productReward_productImgBox {
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start; }
     .productReward_list_box_section1 .productReward_productImg {
+      max-width: none;
       height: 105px; }
   .productReward_list_box_section2 {
     width: 70%;
-    height: 70%;
+    height: 100%;
     margin: 0;
     display: inline-block;
-    float: right; }
+    float: right;
+    position: relative; }
     .productReward_list_box_section2 .productReward_productDescription {
-      line-height: 18px; } }
+      height: 70px;
+      line-height: 18px;
+      -webkit-line-clamp: 4; }
+    .productReward_list_box_section2 .productReward_btn {
+      margin-top: 15px;
+      position: absolute;
+      right: 0;
+      bottom: 0; } }
