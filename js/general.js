@@ -76,22 +76,26 @@ $(document).ready(function () {
                     $productReward_priceLabel_price = $productReward_list_box.find('.productReward_priceLabel_price'),
                     $productReward_productName = $productReward_list_box.find('.productReward_productName'),
                     $productReward_productDescription = $productReward_list_box.find('.productReward_productDescription');
-                    $btn_buyNow = $productReward_list_box.find('.btn_buyNow');
+                    $btn_buyNow = $productReward_list_box.find('.btn_buyNow'),
+                    $productReward_productImg = $productReward_list_box.find('.productReward_productImg');
 
                 var price = $productReward_priceLabel_price.text(),
                     title = $productReward_productName.text(),
                     description = $productReward_productDescription.text(),
-                    buyUrl = $btn_buyNow.attr('href');
+                    buyUrl = $btn_buyNow.attr('href'),
+                    imgURL = $productReward_productImg.attr('src');
 
-                var $lightBox_priceLabel = $('.lightBox_priceLabel'),
+                var $lightBox_priceLabel_price = $('.lightBox_priceLabel_price'),
                     $lightBox_productName = $('.lightBox_productName'),
                     $lightBox_productDescription = $('.lightBox_productDescription'),
-                    $lightBox_btn_buyNow = $('.lightBox .btn_buyNow');
+                    $lightBox_btn_buyNow = $('.lightBox .btn_buyNow'),
+                    $lightBox_img = $('.lightBox_img');
 
-                $lightBox_priceLabel.text(price);
+                $lightBox_priceLabel_price.text(price);
                 $lightBox_productName.text(title);
                 $lightBox_productDescription.text(description);
                 $lightBox_btn_buyNow.attr('href', buyUrl);
+                $lightBox_img.attr('src', imgURL);
             });
 
             $lightBox_close.click(function () {
