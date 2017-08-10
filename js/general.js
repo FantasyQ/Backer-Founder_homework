@@ -4,6 +4,7 @@ $(document).ready(function () {
 
         $.getJSON(apiURL, function (data) {
             pageInitialize(data);
+            flexBoxAdjust();
             lightBox();
         });
 
@@ -101,6 +102,50 @@ $(document).ready(function () {
             $lightBox_close.click(function () {
                 $lightBox.fadeOut(100);
             });
+
+            // press "esc" to close lightbox
+            $(document).keyup(function(e) {
+                if (e.keyCode === 27) {
+                    $lightBox.fadeOut(100);
+                }
+            });
+        }
+
+        // adjust align to last line of flex box
+        function flexBoxAdjust() {
+            var $productReward_list = $('.productReward_list'),
+                $productReward_list_box = $('.productReward_list_box'),
+                $window = $(window);
+
+            items_amount = $productReward_list_box.length;
+
+            flexBoxAdjust_exe();
+
+            $window.resize(flexBoxAdjust_exe);
+
+            function flexBoxAdjust_exe() {
+                var windowWidth_withScrollBar = window.outerWidth,
+                    boxWidth_inner = $productReward_list.width(),
+                    itemWidth_outer = $productReward_list_box.outerWidth(true);
+
+                var $flexBoxAdjust_fakeBox = $('.flexBoxAdjust_fakeBox');
+
+                if (windowWidth_withScrollBar >= 768) {
+
+                    $flexBoxAdjust_fakeBox.remove();
+
+                    itemsInOneLine_amount = Math.floor(boxWidth_inner / itemWidth_outer);
+
+                    var remainder = items_amount % itemsInOneLine_amount;
+                    var supplement = itemsInOneLine_amount - remainder;
+
+                    for (let i = 0; i < supplement; i++) {
+                        $productReward_list.append('<div class="productReward_list_box flexBoxAdjust_fakeBox"></div>');
+                    }
+                } else {
+                    $flexBoxAdjust_fakeBox.remove();
+                }
+            }
         }
 
         // source: http://www.cnblogs.com/liszt/archive/2011/08/16/2140007.html
