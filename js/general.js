@@ -56,7 +56,7 @@ $(document).ready(function () {
                     productReward_productDescription = $productReward_list_box[i].getElementsByClassName('productReward_productDescription');
                     btn_buyNow = $productReward_list_box[i].getElementsByClassName('btn_buyNow');
 
-                productReward_priceLabel_price[0].textContent = productReward[i].price;
+                productReward_priceLabel_price[0].textContent = thousandComma(productReward[i].price);
                 productReward_productImg[0].setAttribute('src', productReward[i].avatar.url);
                 productReward_productName[0].textContent = productReward[i].title;
                 productReward_productDescription[0].textContent = removeHTMLTag(productReward[i].description);
@@ -156,6 +156,18 @@ $(document).ready(function () {
             str= str.replace(/&nbsp;/ig,''); // remove &nbsp;
             str= str.replace(/&hellip;/ig,''); // remove &hellip;
             return str;
+        }
+
+        // source: http://bioankeyang.blogspot.tw/2014/04/jsjavascript.html
+        function thousandComma(number) {
+            var num = number.toString();
+            var pattern = /(-?\d+)(\d{3})/;
+
+            while(pattern.test(num)) {
+                num = num.replace(pattern, "$1,$2");
+            }
+
+            return num;
         }
     })();
 });
