@@ -12,8 +12,8 @@ $(document).ready(function () {
             // project info and process bar
             var project_title = data.title,
                 project_money_goal = Math.round(data.money_goal),
-                project_money_pledged = Math.round(data.money_pledged),
-                project_backer_count = Math.round(data.backer_count);
+                project_money_pledged = thousandComma(Math.round(data.money_pledged)),
+                project_backer_count = thousandComma(Math.round(data.backer_count));
 
             var $projectInfo_description = $('.projectInfo_description'),
                 $projectInfo_money_pledged = $('.projectInfo_money_pledged'),
