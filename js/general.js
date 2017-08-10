@@ -68,10 +68,16 @@ $(document).ready(function () {
         function lightBox() {
             var $lightBox_trigger = $('.lightBox_trigger'),
                 $lightBox_close = $('.lightBox_btn_close'),
-                $lightBox = $('.lightBox');
+                $lightBox = $('.lightBox'),
+                $body = $('body');
 
             $lightBox_trigger.click(function () {
                 $lightBox.fadeIn(200);
+
+                // disable scrolling when lightBox open.
+                $('body').addClass('stop-scrolling');
+                // disable scrolling when lightBox open - for mobile.
+                $body.bind('touchmove', function(e){e.preventDefault()});
 
                 var $productReward_list_box = $(this).closest('.productReward_list_box'),
                     $productReward_priceLabel_price = $productReward_list_box.find('.productReward_priceLabel_price'),
@@ -101,12 +107,16 @@ $(document).ready(function () {
 
             $lightBox_close.click(function () {
                 $lightBox.fadeOut(100);
+                $body.removeClass('stop-scrolling');
+                $body.unbind('touchmove');
             });
 
             // press "esc" to close lightbox
             $(document).keyup(function(e) {
                 if (e.keyCode === 27) {
                     $lightBox.fadeOut(100);
+                    $body.removeClass('stop-scrolling');
+                    $body.unbind('touchmove');
                 }
             });
         }
